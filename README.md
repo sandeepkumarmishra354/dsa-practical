@@ -15,4 +15,4 @@ create a ``html`` file inside that file create a ``<script/>`` tag and give refe
 install ``NodeJs`` on your machine. Open your terminal (cmd) and type this command- ``node /path/to/file.js``
 
 
-Click [here](https://nodejs.org/en/) to to NodeJs official website.
+Click [here](https://nodejs.org/en/) to go to NodeJs official website.
