@@ -57,7 +57,7 @@ class SinglyLinkedList {
     //loop till last element...
     while (tmpList !== null) {
       console.log(tmpList.data);
-      console.log("|"); //optional
+      console.log(`\u2193`); //optional (down arrow)
       tmpList = tmpList.next;
     }
   };
