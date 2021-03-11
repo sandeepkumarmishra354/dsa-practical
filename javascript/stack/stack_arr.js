@@ -26,7 +26,7 @@ class Stack {
   };
 
   display = () => {
-    for(let i = 0; i < this.CURRENT_SIZE; i++) {
+    for(let i = this.CURRENT_SIZE-1; i >= 0; i--) {
         console.log(this.arr[i]);
     }
   };
