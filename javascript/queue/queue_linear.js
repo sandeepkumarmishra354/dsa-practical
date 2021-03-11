@@ -28,7 +28,6 @@ class QueueLinear {
   };
 
   delete = () => {
-    //check if list is not empty
     if (this.list !== null) {
       const currNode = this.list;
       this.list = this.list.next;
