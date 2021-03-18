@@ -52,6 +52,24 @@ class SinglyLinkedList {
     }
   };
 
+  deletePos = (pos) => {
+    //check if list is not empty and position is > 0
+    if (this.list !== null && pos > 0) {
+      let tmpList = this.list;
+      if (pos === 1) {
+        this.list = tmpList.next;
+        return;
+      }
+      for (let i = 1; tmpList !== null && i < pos - 1; i++) {
+        tmpList = tmpList.next;
+      }
+      if (tmpList !== null && tmpList.next !== null) {
+        let nxtNode = tmpList.next.next;
+        tmpList.next = nxtNode;
+      }
+    }
+  };
+
   display = () => {
     let tmpList = this.list;
     //loop till last element...
@@ -90,13 +108,8 @@ const main = () => {
   linkedList.insert(2);
   linkedList.insert(3);
   linkedList.insert(4);
-  console.log("--------original linked list--------");
-  linkedList.display();
-  console.log("--------reversed linked list--------");
-  linkedList.reverse();
-  linkedList.display();
-  console.log("--------delete data 3--------");
-  linkedList.delete(3);
+  linkedList.insert(98);
+  linkedList.deletePos(5);
   linkedList.display();
 };
 
