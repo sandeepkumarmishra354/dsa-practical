@@ -9,7 +9,7 @@ class Node {
   }
 }
 
-class BTS {
+class BST {
   constructor() {
     this.root = null;
   }
@@ -60,12 +60,12 @@ class BTS {
 
 //main entry point
 const main = () => {
-  let bts = new BTS();
+  let bts = new BST();
   bts.insert(45);
   bts.insert(23);
   bts.insert(65);
   bts.insert(90);
-  bts.insert(10);
+  bts.insert(10); 
   bts.displayTreeLeft();
   console.log("--------------");
   bts.displayTreeRight();
