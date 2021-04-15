@@ -32,7 +32,7 @@ function reverseString(dataStr) {
   for (let i = 0; i <= tmpLength; i++) {
     reversed[i] = pop();
   }
-  return reversed.join("");
+  return reversed.join("");// return the reversed array as string using join. (you can also return the array itself)
 }
 /////////////////////////////////////////////////////////
 const strData = "sandeep mishra";
