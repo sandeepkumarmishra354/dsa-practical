@@ -1,4 +1,9 @@
-//Q-8 = Write  a program  to Reverse  a string  using  stack.
+/*
+* Q-8 Write  a program  to Reverse  a string  using  stack.
+* Sandeep mishra
+* MCA 1st year (sem-1)
+* Roll No. 2012093
+*/
 
 const STACK = []; // empty stack
 let TOP = -1; // holds current position (index) of newly added element.
