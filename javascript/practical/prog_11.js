@@ -50,6 +50,36 @@ class BinarySearchTree {
 
   // expected argument is number.
   search(ele) {
+    let steps = 0;
+    if (this.rootNode !== null) {
+      // check for first node
+      if (this.rootNode.data === ele) {
+        return steps;
+      }
+      let tmpRoot = this.rootNode;
+      // check until tmpRoot becomes null or element matched in node.
+      while (tmpRoot !== null && tmpRoot.data !== ele) {
+        if (ele < tmpRoot.data) tmpRoot = tmpRoot.left;
+        else tmpRoot = tmpRoot.right;
+        steps++;
+      }
+      // if tempRoot is null it means element not found.
+      if (tmpRoot === null) return -1;
+      return steps;
+    }
+    return steps;
+  }
+
+  // expected argument is number.
+  delete(ele) {
     //
   }
 }
+
+const bst = new BinarySearchTree();
+bst.addEle(12);
+bst.addEle(11);
+bst.addEle(13);
+bst.addEle(8);
+bst.addEle(9);
+console.log(bst.search(99));
