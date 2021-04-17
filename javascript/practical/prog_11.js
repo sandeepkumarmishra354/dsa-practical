@@ -69,7 +69,7 @@ class BinarySearchTree {
       if (tmpRoot === null) return -1;
       return steps;
     }
-    return steps;
+    return -1;
   }
 
   // expected argument is number.
