@@ -20,7 +20,7 @@ class BinarySearchTree {
   rootNode = null;
 
   // expected argument is number.
-  addEle(ele) {
+  insert(ele) {
     // create new node.
     const newNode = new DataNode(ele, null, null);
     // check if root node is null.
