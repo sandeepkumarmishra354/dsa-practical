@@ -49,6 +49,8 @@ class BinarySearchTree {
   }
 
   // expected argument is number.
+  // if element found in the tree then steps required to reach that element is returned.
+  // if element is not in the tree then -1 will be returned.
   search(ele) {
     let steps = 0;
     if (this.rootNode !== null) {
