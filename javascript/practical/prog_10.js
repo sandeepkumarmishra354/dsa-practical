@@ -46,10 +46,12 @@ class Queue {
   pop() {
     if (!this.isEmpty()) {
       //shift all elements one index left
+      const ele = this.queue[this.front];
       for (let i = 0; i < this.rear - 1; i++) {
         this.queue[i] = this.queue[i + 1];
       }
       this.rear -= 1;
+      return ele;
     }
   }
 
@@ -65,18 +67,21 @@ class Queue {
 }
 
 function reverseStack() {
-    const stack = new Stack();
-    stack.push(1);
-    stack.push(2);
-    stack.push(3);
-    stack.push(4);
-    stack.display();
-    ////////////////
-    const queue = new Queue();
-    while(!stack.isEmpty()) {
-        queue.push(stack.pop());
-    }
-    queue.display();
+  const stack = new Stack();
+  stack.push(1);
+  stack.push(2);
+  stack.push(3);
+  stack.push(4);
+  stack.display();
+  ////////////////
+  const queue = new Queue();
+  while (!stack.isEmpty()) {
+    queue.push(stack.pop());
+  }
+  while (!queue.isEmpty()) {
+    stack.push(queue.pop());
+  }
+  stack.display();
 }
 
 reverseStack();

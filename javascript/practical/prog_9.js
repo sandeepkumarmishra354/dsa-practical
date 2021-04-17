@@ -62,5 +62,5 @@ function checkBalance(dataStr) {
 }
 
 ////////////////////////////////////////////////////////
-const result = checkBalance("}{(a+b)*p}[(c-d)]");
+const result = checkBalance("([dd+{}])");
 console.log(result);
