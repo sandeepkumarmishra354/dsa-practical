@@ -5,7 +5,8 @@
  * Roll No. 2012093
  */
 
-const parantheses = ["(", ")", "{", "}", "[", "]"];
+const openedParantheses = ["(", , "{", , "["];
+const closedParantheses = [")", , "}", , "]"];
 const STACK = []; // empty stack
 let TOP = -1; // holds current position (index) of newly added element.
 
@@ -23,24 +24,43 @@ function pop() {
 
 //TODO: STILL PENDING
 function checkBalance(dataStr) {
-  const strLength = dataStr.length;
-  // create stack of parantheses
-  for (let i = 0; i < strLength; i++) {
-    if (parantheses.includes(dataStr[i])) {
-      push(dataStr[i]);
+  // extract only parantheses from string, create new string
+  let extractedStr = "";
+  for (let i = 0; i < dataStr.length; i++) {
+    const char = dataStr[i];
+    if ([...openedParantheses, ...closedParantheses].includes(char)) {
+      extractedStr += char;
     }
   }
-  // check if length is "EVEN" then there is possibility of balanced parantheses, otherwise not.
+  const strLength = extractedStr.length;
+  // check if length is "EVEN" then only there is chance of balance, other wise not
   if (strLength % 2 === 0) {
-    // create stack
+    let isBalanced = true;
+    // create stack of parantheses
     for (let i = 0; i < strLength; i++) {
-      push(dataStr[i]);
+      const char = extractedStr[i];
+      if (openedParantheses.includes(char)) {
+        push(char);
+      } else if (closedParantheses.includes(char)) {
+        const lastPar = pop();
+        if (
+          (char === ")" && lastPar === "(") ||
+          (char === "}" && lastPar === "{") ||
+          (char === "]" && lastPar === "[")
+        ) {
+          isBalanced = true;
+        } else {
+          isBalanced = false;
+          break;
+        }
+      }
     }
+    return isBalanced ? "parantheses are balanced" : "parentheses are **NOT** balanced.";
   }
   // this means length is odd and parantheses is not balanced.
   return "parentheses are **NOT** balanced.";
 }
 
 ////////////////////////////////////////////////////////
-const result = checkBalance("(((())))");
+const result = checkBalance("}{(a+b)*p}[(c-d)]");
 console.log(result);
