@@ -1,5 +1,5 @@
 /*
- * Q-11 Write  a program  to implement binarysearch(Divide  and Conquer).
+ * Q-14 Write  a program  to implement binarysearch(Divide  and Conquer).
  * Sandeep mishra
  * MCA 1st year (sem-1)
  * Roll No. 2012093
