@@ -134,7 +134,7 @@ class BinarySearchTree {
           parentNodeOfMin.left = null;
         }
       } else {
-        throw new Error(`Value: ${ele} not present in bst.`);
+        console.log("value not found");
       }
     }
   }
@@ -147,6 +147,6 @@ bst.insert(13);
 bst.insert(8);
 bst.insert(9);
 console.log(bst.rootNode);
-bst.delete(12);
+bst.delete(1);
 console.log("-------------------");
 console.log(bst.rootNode);
