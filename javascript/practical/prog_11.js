@@ -138,6 +138,30 @@ class BinarySearchTree {
       }
     }
   }
+
+  inorder(node = this.rootNode) {
+    if (node != null) {
+      this.inorder(node.left);
+      console.log(node.data);
+      this.inorder(node.right);
+    }
+  }
+  preorder(node = this.rootNode) {
+    //console.log(node.data)
+    if (node != null) {
+      console.log(node.data);
+      this.inorder(node.left);
+      this.inorder(node.right);
+    }
+  }
+  postorder(node = this.rootNode) {
+    //console.log(node.data)
+    if (node != null) {
+      this.inorder(node.left);
+      this.inorder(node.right);
+      console.log(node.data);
+    }
+  }
 }
 
 const bst = new BinarySearchTree();
